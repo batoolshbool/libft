@@ -1,50 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 15:00:26 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/05 15:24:08 by bshbool          ###   ########.fr       */
+/*   Created: 2025/08/07 18:44:59 by bshbool           #+#    #+#             */
+/*   Updated: 2025/08/07 18:53:33 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t		i;
-	const char	*s;
-	char		*d;
+	size_t				i;
+	const unsigned char	*c1;
+	const unsigned char	*c2;
 
-	s = (const char *)src;
-	d = (char *)dest;
+	c1 = (const unsigned char *)s1;
+	c2 = (const unsigned char *)s2;
 	i = 0;
-	while (i != n)
+	while (i < n)
 	{
-		d[i] = s[i];
+		if (c1[i] != c2[i])
+			return (c1[i] - c2[i]);
 		i++;
 	}
-	return (d);
+	return (0);
 }
 
 /*#include <stdio.h>
 #include <string.h>
 
-int main()
+int	main(void)
 {
-    char str1[] = "HELLO!!!!!";
-    char str2[] = "";
+	char str1[] = "Hello";
+	char str2[] = "Hellp";
 
-    memcpy(str2, str1, sizeof(str1));
+	int res = memcmp(str1, str2, 6);
+	int res2 = ft_memcmp(str1, str2, 6);
 
-    printf("str2 memcpy: ");
-    printf("%s\n",str2);
-
-   ft_memcpy(str2, str1, sizeof(str1));
-
-    printf("str2 ft_memcpy: ");
-    printf("%s\n",str2);
-
-    return 0;
+	printf("memcmp: %d\n", res);
+	printf("ft_memcmp: %d\n", res2);
 }*/
