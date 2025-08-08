@@ -6,14 +6,14 @@
 /*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 17:14:50 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/08 17:28:16 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/08 17:47:01 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n);
 
-void *calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*hi;
 
@@ -24,7 +24,7 @@ void *calloc(size_t nmemb, size_t size)
 	return (hi);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 int main() {
    int n = 5;
@@ -40,8 +40,9 @@ int main() {
 
    printf("Array elements after ft_calloc: ");
    for (int i = 0; i < n; i++) {
-      printf("%d ", array[i]);
+      printf("%d ", array2[i]);
    }
    free(array);
+   free(array2);
    return 0;
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 17:52:34 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/08 16:50:50 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/08 17:54:26 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -32,7 +32,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (d + s);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <bsd/string.h>
 
 int main()
@@ -41,12 +41,14 @@ int main()
     char last[] = "a potentially long string";
     int size = 16;
     char buffer[size];
+    char buffer2[size];
 
     strcpy(buffer,first);
+    strcpy(buffer2,first);
+
     int r = strlcat(buffer,last,size);
-    int r2 = ft_strlcat(buffer,last,size);
+    int r2 = ft_strlcat(buffer2,last,size);
     printf("strlcat: %d\n\nft_strlcat: %d\n",r, r2);
 
     return(0);
-}
-
+}*/

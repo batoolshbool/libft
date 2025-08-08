@@ -6,7 +6,7 @@
 /*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:31:59 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/08 15:09:24 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/08 18:22:26 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -24,9 +24,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (d > s && d < s + n)
 	{
 		i = n;
-		while (i > 0)
+		while (i--)
 		{
-			i--;
 			d[i] = s[i];
 		}
 	}
@@ -49,15 +48,16 @@ int main()
 {
     char str1[] = "HELLO!!!!!";
     char str2[] = "hihihihi";
+    char str3[] = "hihihihi";
 
     memmove(str2, str1, 3);
 
-    printf("str2 memmove: ");
+    printf("memmove: ");
     printf("%s\n",str2);
 
-   ft_memmove(str2, str1, 3);
+   ft_memmove(str3, str1, 3);
 
-    printf("str2 ft_memmove: ");
+    printf("ft_memmove: ");
     printf("%s\n",str2);
 
     return 0;
