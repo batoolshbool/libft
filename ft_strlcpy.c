@@ -6,33 +6,38 @@
 /*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:10:51 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/04 15:51:59 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/08 15:21:00 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+size_t	strlen(const char *s);
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
+	size_t	i;
+	size_t	srclen;
 
+	srclen = ft_strlen(src);
 	i = 0;
 	if (size > 0)
 	{
 		while (src[i] != '\0' && i < (size - 1))
 		{
-			dest[i] = src[i];
+			dst[i] = src[i];
 			i++;
 		}
-		dest[i] = '\0';
+		dst[i] = '\0';
 	}
 	while (src[i] != '\0')
 	{
 		i++;
 	}
-	return (i);
+	return (srclen);
 }
 
-/*
-#include <string.h>
+
+#include <bsd/string.h>
 #include <stdio.h>
 
 int main (void)
@@ -40,5 +45,6 @@ int main (void)
 	char s[] = "Hello World!";
 	char d[] = "meow";
 	int r = ft_strlcpy(d, s, 20);
-	printf("%d\n", r);
-}*/
+	int r2 = strlcpy(d, s, 20);
+	printf("%d\n%d", r, r2);
+}

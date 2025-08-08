@@ -6,10 +6,10 @@
 /*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 14:50:10 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/05 14:04:28 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/08 14:57:29 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

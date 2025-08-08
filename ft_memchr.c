@@ -9,8 +9,7 @@
 /*   Updated: 2025/08/07 18:44:16 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

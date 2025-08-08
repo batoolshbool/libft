@@ -6,9 +6,10 @@
 /*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 14:58:07 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/04 15:08:45 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/08 15:40:17 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -35,12 +36,12 @@ int	ft_atoi(const char *nptr)
 	return (num * minus);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 int main()
 {
-	char s[] = "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111";
+	char s[] = "147483648";
 	printf("%d\n", ft_atoi(s));
 	printf("%d\n", atoi(s));
-}
+}*/

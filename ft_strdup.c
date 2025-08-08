@@ -6,28 +6,27 @@
 /*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 16:37:53 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/04 16:39:46 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/08 15:57:14 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <stdlib.h>
+size_t	ft_strlen(const char *s);
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *s)
 {
 	char	*hi;
-	int		i;
-	int		j;
+	size_t	j;
+	size_t	len;
 
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	hi = (char *)malloc((i + 1) * sizeof(char));
+	len = ft_strlen(s);
+	hi = (char *)malloc((len + 1) * sizeof(char));
 	if (hi == NULL)
 		return (0);
 	j = 0;
-	while (j <= i)
+	while (j <= len)
 	{
-		hi[j] = src[j];
+		hi[j] = s[j];
 		j++;
 	}
 	return (hi);
@@ -35,7 +34,8 @@ char	*ft_strdup(char *src)
 
 /*#include <stdio.h>
 #include <string.h>
-int main(void)
+
+int	main(void)
 {
 	char src[] = "Hello :)";
 	char *dup = ft_strdup(src);
