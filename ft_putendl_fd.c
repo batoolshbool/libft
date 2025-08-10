@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 19:04:57 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/08 15:23:40 by bshbool          ###   ########.fr       */
+/*   Created: 2025/08/10 17:59:08 by bshbool           #+#    #+#             */
+/*   Updated: 2025/08/10 18:17:21 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <stddef.h>
-#include <stdlib.h>
-#include <unistd.h>
+void	ft_putendl_fd(char *s, int fd)
+{
+	int	i;
 
-#ifndef LIBFT_H
-#define LIBFT_H
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(fd, &s[i], 1);
+		s++;
+	}
+	write(1, "\n", 1);
+}
 
-size_t	ft_strlen(const char *s);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-
-#endif
+/*int main(void)
+{
+	char *c = "abc";
+	ft_putendl_fd(c, 1);
+	return (0);
+}*/

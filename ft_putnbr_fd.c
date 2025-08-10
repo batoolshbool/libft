@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 19:04:57 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/08 15:23:40 by bshbool          ###   ########.fr       */
+/*   Created: 2025/08/10 18:11:48 by bshbool           #+#    #+#             */
+/*   Updated: 2025/08/10 18:16:51 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <stddef.h>
-#include <stdlib.h>
-#include <unistd.h>
+void	ft_putnbr_fd(int n, int fd)
+{
+	char	c;
 
-#ifndef LIBFT_H
-#define LIBFT_H
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		n = n * -1;
+		write(1, "-", 1);
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	c = (n % 10) + '0';
+	write(fd, &c, 1);
+}
 
-size_t	ft_strlen(const char *s);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-
-#endif
+/*int	main(void)
+{
+	ft_putnbr_fd(-21, 1);
+}*/
