@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -22,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	slen = ft_strlen(s);
 	if (start >= slen)
 	{
-		return (NULL);
+		return (ft_strdup("");
 	}
 	hi = (char *)malloc(sizeof(char) * len + 1);
 	i = 0;
@@ -35,9 +36,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (hi);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int	main(void)
 {
     char *a = ft_substr("ABCDEF", 2, 3);
     printf("%s\n", a);
-}
+}*/

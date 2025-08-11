@@ -6,12 +6,10 @@
 /*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 17:14:50 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/08 17:47:01 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/11 14:42:54 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
-void	ft_bzero(void *s, size_t n);
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

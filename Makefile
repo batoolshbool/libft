@@ -1,12 +1,17 @@
+NAME = libft.a
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRCS =
-OBJS = 
+OBJS = %(src: .c=.o)
 
-all: $()
+all:
 
 clean:
-	rm 
+	rm -rf $(OBJS) 
 
-fclean:
+fclean: clean
+	rm -rf $(NAME)
 
-re:
+re: fclean all
+
+.PHONY = all clean fclean re
