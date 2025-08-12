@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 19:47:37 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/12 20:17:05 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/12 20:35:22 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,24 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char	*hi;
 	size_t	len;
 	size_t	i;
-	char *hi;
 
-	if (!s ||!f)
+	if (!s || !f)
 		return (NULL);
 	len = ft_strlen(s);
 	hi = (char *)malloc(sizeof(char) * (len + 1));
 	i = 0;
-	while(s[i++])
-		hi[i] = f(i , s[i]);
+	while (i < len)
+	{
+		hi[i] = f(i, s[i]);
+		i++;
+	}
 	hi[i] = '\0';
-	return(hi); 
+	return (hi);
 }
- char func(unsigned int i, char c)
+/*char func(unsigned int i, char c)
  {
 	if (i % 2 == 0)
 		return ((char)ft_toupper(c));
@@ -41,4 +44,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
  {
 	char *i = ft_strmapi("Helloooo", func);
 	printf("%s\n", i);
- }
+ }*/
