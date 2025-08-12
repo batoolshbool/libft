@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,7 +6,7 @@
 /*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 13:54:06 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/10 13:54:20 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/12 18:37:06 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -23,9 +22,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	slen = ft_strlen(s);
 	if (start >= slen)
 	{
-		return (ft_strdup("");
+		return (ft_strdup(""));
 	}
-	hi = (char *)malloc(sizeof(char) * len + 1);
+	if (len > slen - start)
+		len = slen - start;
+	hi = (char *)malloc(sizeof(char) * (len + 1));
+	if (!hi)
+		return (NULL);
 	i = 0;
 	while (s[start + i] != '\0' && i < len)
 	{
