@@ -6,7 +6,7 @@
 /*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 19:04:45 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/10 19:20:24 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/12 19:34:08 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,27 +15,26 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	len;
-	char	*str;
 
-	len = (ft_strlen(s1));
 	if (!s1)
-		return (ft_strdup(""));
+		return (NULL);
 	if (!set)
-		return(ft_strdup(s1));
+		return (ft_strdup(s1));
+	len = (ft_strlen(s1));
 	i = 0;
-	while (str[i] && ft_strchr(s1, set))
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	while (str[len] && ft_strchr(s1, set))
+	while (len > i && ft_strchr(set, s1[len - 1]))
 		len--;
-	return (ft_substr(s1, str, len));
+	return (ft_substr(s1, i, len - i));
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main(void)
 {
-	char const *s1 = "  hello hi world  ";
-	char const *s2 = "  ";
+	char const *s1 = "....hello hi world....";
+	char const *s2 = ".";
 	char *meow = ft_strtrim(s1, s2);
 
 	printf("%s\n", meow);
-}
+}*/

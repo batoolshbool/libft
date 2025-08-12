@@ -1,47 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 13:54:06 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/12 19:43:44 by bshbool          ###   ########.fr       */
+/*   Created: 2025/08/12 19:47:37 by bshbool           #+#    #+#             */
+/*   Updated: 2025/08/12 20:17:05 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*hi;
+	size_t	len;
 	size_t	i;
-	size_t	slen;
+	char *hi;
 
-	if (!s)
+	if (!s ||!f)
 		return (NULL);
-	slen = ft_strlen(s);
-	if (start >= slen)
-	{
-		return (ft_strdup(""));
-	}
-	if (len > slen - start)
-		len = slen - start;
+	len = ft_strlen(s);
 	hi = (char *)malloc(sizeof(char) * (len + 1));
-	if (!hi)
-		return (NULL);
 	i = 0;
-	while (s[start + i] != '\0' && i < len)
-	{
-		hi[i] = s[start + i];
-		i++;
-	}
+	while(s[i++])
+		hi[i] = f(i , s[i]);
 	hi[i] = '\0';
-	return (hi);
+	return(hi); 
 }
+ char func(unsigned int i, char c)
+ {
+	if (i % 2 == 0)
+		return ((char)ft_toupper(c));
+	else
+		return ((char)ft_tolower(c));
+ }
 
-/*#include <stdio.h>
-int	main(void)
-{
-    char *a = ft_substr("ABCDEF", 2, 3);
-    printf("%s\n", a);
-}*/
+ #include <stdio.h>
+ int main()
+ {
+	char *i = ft_strmapi("Helloooo", func);
+	printf("%s\n", i);
+ }
