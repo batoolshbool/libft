@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 14:40:18 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/12 21:59:28 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/12 22:01:14 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,4 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-
-//int main()
-//{
-//	char *i = ft_itoa(-42);
-//	printf("%s\n", i);
-//}
+norm
