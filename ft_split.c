@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:49:11 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/13 19:38:07 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/13 19:50:52 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char **ft_split(char const *s, char c)
 	if (!s)
 		return(NULL);
 	count = ft_count(s , c);
-	hi = malloc((count + 1) * sizeof(char));
+	hi = malloc((count + 1) * sizeof(char *));
 	if(!hi)
 		return(NULL);
 	i = 0;
@@ -55,20 +55,17 @@ char **ft_split(char const *s, char c)
 			i++;
 		if (i > start)
 		{
-			hi[j] = &s[start];
+			hi[j] = ft_strdup(&s[start]);
 			j++;
-			start++;
-			/*if(!hi[j])
+			if(!hi[j])
 				while (j > 0)
 					free (hi[--j]);
 			free (hi);
-			return (NULL);*/
+			return (NULL);
 		}
-		j++;
 	}
 	hi[j] = NULL;
-	char hello = ft_strdup(hi);
-	return (hello);
+	return (hi);
 }
 #include <stdio.h>
 int main()
