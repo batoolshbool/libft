@@ -1,3 +1,16 @@
 ☐ split
 ✔ itoa @done (8/13/2025, 6:47:34 PM)
 ✔ striteri @done (8/12/2025, 8:52:03 PM)
+
+✔ ft_lstnew @done (8/18/2025, 3:31:20 PM)
+✔ ft_lstadd_front @done (8/18/2025, 3:31:22 PM)
+✔ ft_lstsize @done (8/18/2025, 4:45:18 PM)
+☐ ft_lstlast
+☐ ft_lstadd_back
+☐ ft_lstdelone
+☐ ft_lstclear
+☐ ft_lstiter
+☐ ft_lstmap
+
+☐ makefile
+☐ makefile bonus

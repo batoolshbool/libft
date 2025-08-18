@@ -1,0 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/18 16:08:06 by bshbool           #+#    #+#             */
+/*   Updated: 2025/08/18 16:44:54 by bshbool          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+t_list	*ft_lstnew(void *content);
+
+int	ft_lstsize(t_list *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}
+/*
+#include <stdio.h>
+int main(void)
+{
+	t_list *n1 = ft_lstnew("hi");
+	t_list *n2 = ft_lstnew("hello");
+	t_list *n3 = ft_lstnew("meow");
+	
+	if (n1 && n2 && n3)
+	{
+		n1->next = n2;
+		n2->next = n3;
+		n3->next = NULL;
+		
+		printf("size : %d\n", ft_lstsize(n1));
+	}
+	else
+		printf("failed\n");
+}
+		*/
