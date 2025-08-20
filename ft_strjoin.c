@@ -6,9 +6,11 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 15:16:10 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/12 19:44:14 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 13:07:46 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

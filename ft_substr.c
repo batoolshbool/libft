@@ -6,10 +6,11 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 13:54:06 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/12 19:43:44 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 13:07:25 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

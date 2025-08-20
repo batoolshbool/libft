@@ -6,10 +6,11 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 15:53:08 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/12 19:44:03 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 13:09:06 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

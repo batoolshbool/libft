@@ -6,13 +6,11 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 13:45:49 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/18 15:30:20 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 14:36:45 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-t_list	*ft_lstnew(void *content);
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {

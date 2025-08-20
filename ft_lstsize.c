@@ -6,13 +6,11 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 16:08:06 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/18 16:44:54 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 14:36:41 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-t_list	*ft_lstnew(void *content);
 
 int	ft_lstsize(t_list *lst)
 {

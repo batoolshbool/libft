@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 18:11:32 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/07 18:28:53 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 14:44:31 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -18,7 +19,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t			i;
 
 	i = 0;
-	while (1 < n)
+	while (i < n)
 	{
 		c1 = (unsigned char)s1[i];
 		c2 = (unsigned char)s2[i];
@@ -36,10 +37,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int main () 
 {
-   char str1[15] = "abcdef";
-   char str2[15] = "abcdEF";
+   char str1[15] = "abcdefghij";
+   char str2[15] = "abcdefgxyz";
 
-   int ret = strncmp(str1, str2, 4);
+   int ret = strncmp(str1, str2, 3);
    if(ret < 0) 
    {
       printf("str1 is less than str2\n");
@@ -53,7 +54,7 @@ int main ()
       printf("str1 is equal to str2\n");
    }
 /////////
-      int ret2 = ft_strncmp(str1, str2, 4);
+      int ret2 = ft_strncmp(str1, str2, 3);
    if(ret2 < 0)
    {
       printf("str1 is less than str2\n");

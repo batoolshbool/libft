@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 16:49:48 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/05 12:47:53 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 15:35:39 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 char	*ft_strchr(const char *str, int c)
 {
@@ -26,13 +26,12 @@ char	*ft_strchr(const char *str, int c)
 		return ((char *)&str[i]);
 	return (0);
 }
-
 /*#include <stdio.h>
 #include <string.h>
 
 int main(void)
 {
-	char tweet[] = "This is my @mention hi";
+	//char tweet[] = "This is my @mention hi";
 	char *m  = strchr(tweet, '@');
 	char *m2 = ft_strchr(tweet, '@');
 	printf("%s\n", m);

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:00:26 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/05 15:24:08 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 15:37:00 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
@@ -33,7 +34,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 int main()
 {
-    char str1[] = "HELLO!!!!!";
+    char str1[] = "";
     char str2[] = "";
 
     memcpy(str2, str1, sizeof(str1));

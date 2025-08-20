@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 18:11:48 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/10 18:16:51 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 14:57:43 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
@@ -18,6 +19,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n == -2147483648)
 	{
 		write(fd, "-2147483648", 11);
+		return;
 	}
 	if (n < 0)
 	{
@@ -34,5 +36,5 @@ void	ft_putnbr_fd(int n, int fd)
 
 /*int	main(void)
 {
-	ft_putnbr_fd(-21, 1);
+	ft_putnbr_fd(-2147483648LL, 2);
 }*/

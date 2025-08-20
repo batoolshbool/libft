@@ -6,17 +6,19 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:49:11 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/13 19:50:52 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 15:12:03 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count(char const *s, char c)
+static size_t	ft_count(char const *s, char c)
 {
-	size_t	i = 0;
-	size_t	count = 0;
+	size_t	i;
+	size_t	count;
 
+	i = 0;
+	count = 0;
 	while(s[i] != '\0')
 	{
 		while (s[i] == c)
@@ -30,13 +32,43 @@ size_t	ft_count(char const *s, char c)
 	}
 	return (count);
 }
+static char	*ft_dupfunc(const char *s, size_t a, char c)
+{
+	char	*hi;
+	size_t	j;
+	size_t	i;
+	size_t	start;
 
+	start = a;
+	while(s[a] && s[a] != c)
+		a++;
+	i = a - start;
+	hi = (char *)malloc((i + 1) * sizeof(char));
+	if (hi == NULL)
+		return (NULL);
+	j = 0;
+	while (j < i)
+	{
+		hi[j] = s[start + j];
+		j++;
+	}
+	hi[j] = '\0';
+
+	return (hi);
+}
+static char	**ft_free(char **hi, size_t j)
+{
+	while (j > 0)
+		free (hi[--j]);
+	free (hi);
+	return (NULL);
+}
 char **ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
 	size_t	count;
-	char const 	**hi;
+	char 	**hi;
 
 	if (!s)
 		return(NULL);
@@ -48,33 +80,30 @@ char **ft_split(char const *s, char c)
 	j = 0;
 	while (s[i]!= '\0')
 	{
-		while (s[i] == c)
-			i++;
-		size_t	start = i;
-		while(s[i] && s[i] != c)
-			i++;
-		if (i > start)
+		while (s[i++] == c)
+		if (s[i])
 		{
-			hi[j] = ft_strdup(&s[start]);
+			hi[j] = ft_dupfunc(s, i, c);
+			if (!hi[j])
+				return (ft_free(hi, j));
 			j++;
-			if(!hi[j])
-				while (j > 0)
-					free (hi[--j]);
-			free (hi);
-			return (NULL);
+			while (s[i] && s[i] != c)
+				i++;
 		}
 	}
 	hi[j] = NULL;
 	return (hi);
 }
-#include <stdio.h>
+/*#include <stdio.h>
 int main()
 {
-	char **meow = ft_split("meow meow meow meow :3", ' ');
+	char **meow = ft_split("  meow meow meow meow :3", ' ');
 	int i = 0 ;
 	while(meow[i])
 	{
 		printf("%s\n", meow[i]);
+		free(meow[i]);
 		i++;
 	}
-}
+	free(meow);
+}*/

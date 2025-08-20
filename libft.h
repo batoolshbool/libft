@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 19:04:57 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/18 13:04:17 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 14:36:36 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,7 @@ typedef struct	s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+t_list	*ft_lstnew(void *content);
+
 
 #endif
