@@ -6,17 +6,16 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 19:04:57 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/20 14:36:36 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 15:47:00 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
-#include <unistd.h>
-
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
+# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
 //PART ONE
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -57,12 +56,11 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 //BONUS
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
 t_list	*ft_lstnew(void *content);
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:49:11 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/20 15:12:03 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 16:32:26 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ static size_t	ft_count(char const *s, char c)
 
 	i = 0;
 	count = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		while (s[i] == c)
 			i++;
-		if(s[i])
+		if (s[i])
 		{
 			count++;
 			while (s[i] && s[i] != c)
@@ -32,6 +32,7 @@ static size_t	ft_count(char const *s, char c)
 	}
 	return (count);
 }
+
 static char	*ft_dupfunc(const char *s, size_t a, char c)
 {
 	char	*hi;
@@ -40,7 +41,7 @@ static char	*ft_dupfunc(const char *s, size_t a, char c)
 	size_t	start;
 
 	start = a;
-	while(s[a] && s[a] != c)
+	while (s[a] && s[a] != c)
 		a++;
 	i = a - start;
 	hi = (char *)malloc((i + 1) * sizeof(char));
@@ -53,9 +54,9 @@ static char	*ft_dupfunc(const char *s, size_t a, char c)
 		j++;
 	}
 	hi[j] = '\0';
-
 	return (hi);
 }
+
 static char	**ft_free(char **hi, size_t j)
 {
 	while (j > 0)
@@ -63,33 +64,35 @@ static char	**ft_free(char **hi, size_t j)
 	free (hi);
 	return (NULL);
 }
-char **ft_split(char const *s, char c)
+
+char	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
 	size_t	count;
-	char 	**hi;
+	char	**hi;
 
 	if (!s)
-		return(NULL);
-	count = ft_count(s , c);
+		return (NULL);
+	count = ft_count(s, c);
 	hi = malloc((count + 1) * sizeof(char *));
-	if(!hi)
-		return(NULL);
+	if (!hi)
+		return (NULL);
 	i = 0;
 	j = 0;
-	while (s[i]!= '\0')
+	while (s[i] != '\0')
 	{
-		while (s[i++] == c)
-		if (s[i])
-		{
-			hi[j] = ft_dupfunc(s, i, c);
-			if (!hi[j])
-				return (ft_free(hi, j));
-			j++;
-			while (s[i] && s[i] != c)
-				i++;
-		}
+		while (s[i] == c)
+			i++;
+			if (s[i])
+			{
+				hi[j] = ft_dupfunc(s, i, c);
+				if (!hi[j])
+					return (ft_free(hi, j));
+				j++;
+				while (s[i] && s[i] != c)
+					i++;
+			}
 	}
 	hi[j] = NULL;
 	return (hi);

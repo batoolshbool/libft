@@ -6,10 +6,11 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 16:49:48 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/20 15:35:39 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 15:41:34 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 char	*ft_strchr(const char *str, int c)
 {
