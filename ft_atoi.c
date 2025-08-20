@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 14:58:07 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/12 19:45:20 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 18:24:23 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ int	ft_atoi(const char *nptr)
 	return (num * minus);
 }
 
-/*#include <stdio.h>
-#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdlib.h>
 
-int main()
-{
-	char s[] = "147483648";
-	printf("%d\n", ft_atoi(s));
-	printf("%d\n", atoi(s));
-}*/
+//int main()
+//{
+//	char s[] = "88888";
+//	printf("%d\n", ft_atoi(s));
+//	printf("%d\n", atoi(s));
+//}

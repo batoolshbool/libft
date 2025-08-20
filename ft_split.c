@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:49:11 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/20 16:32:26 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/20 18:54:13 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static size_t	ft_count(char const *s, char c)
 
 static char	*ft_dupfunc(const char *s, size_t a, char c)
 {
-	char	*hi;
+	char	*var;
 	size_t	j;
 	size_t	i;
 	size_t	start;
@@ -44,69 +44,76 @@ static char	*ft_dupfunc(const char *s, size_t a, char c)
 	while (s[a] && s[a] != c)
 		a++;
 	i = a - start;
-	hi = (char *)malloc((i + 1) * sizeof(char));
-	if (hi == NULL)
+	var = (char *)malloc((i + 1) * sizeof(char));
+	if (var == NULL)
 		return (NULL);
 	j = 0;
 	while (j < i)
 	{
-		hi[j] = s[start + j];
+		var[j] = s[start + j];
 		j++;
 	}
-	hi[j] = '\0';
-	return (hi);
+	var[j] = '\0';
+	return (var);
 }
 
-static char	**ft_free(char **hi, size_t j)
+static char	**ft_free(char **var, size_t j)
 {
 	while (j > 0)
-		free (hi[--j]);
-	free (hi);
+		free (var[--j]);
+	free (var);
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_fill(char const *s, char c, char **var)
 {
-	size_t	i;
 	size_t	j;
-	size_t	count;
-	char	**hi;
+	size_t	i;
 
-	if (!s)
-		return (NULL);
-	count = ft_count(s, c);
-	hi = malloc((count + 1) * sizeof(char *));
-	if (!hi)
-		return (NULL);
 	i = 0;
 	j = 0;
 	while (s[i] != '\0')
 	{
 		while (s[i] == c)
 			i++;
-			if (s[i])
-			{
-				hi[j] = ft_dupfunc(s, i, c);
-				if (!hi[j])
-					return (ft_free(hi, j));
-				j++;
-				while (s[i] && s[i] != c)
-					i++;
-			}
+		if (s[i])
+		{
+			var[j] = ft_dupfunc(s, i, c);
+			if (!var[j])
+				return (ft_free(var, j));
+			j++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
 	}
-	hi[j] = NULL;
-	return (hi);
+	var[j] = NULL;
+	return (var);
 }
-/*#include <stdio.h>
-int main()
+
+char	**ft_split(char const *s, char c)
 {
-	char **meow = ft_split("  meow meow meow meow :3", ' ');
-	int i = 0 ;
-	while(meow[i])
-	{
-		printf("%s\n", meow[i]);
-		free(meow[i]);
-		i++;
-	}
-	free(meow);
-}*/
+	size_t	count;
+	char	**var;
+
+	if (!s)
+		return (NULL);
+	count = ft_count(s, c);
+	var = malloc((count + 1) * sizeof(char *));
+	if (!var)
+		return (NULL);
+	ft_fill(s, c, var);
+	return (var);
+}
+//#include <stdio.h>
+//int main()
+//{
+//	char **meow = ft_split("  meow meow meow meow :3", ' ');
+//	int i = 0 ;
+//	while(meow[i])
+//	{
+//		printf("%s\n", meow[i]);
+//		free(meow[i]);
+//		i++;
+//	}
+//	free(meow);
+//}
