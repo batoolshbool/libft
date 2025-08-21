@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 20:43:01 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/12 20:51:40 by bshbool          ###   ########.fr       */
+/*   Created: 2025/08/21 17:32:36 by bshbool           #+#    #+#             */
+/*   Updated: 2025/08/21 17:45:18 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	unsigned int	i;
+	t_list	*var;
 
-	if (!s || !f)
+	if (!lst || *del)
 		return ;
-	i = 0;
-	while (s[i])
+	while (*lst)
 	{
-		f(i, &s[i]);
-		i++;
+		var = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = var;
 	}
-	s[i] = '\0';
 }
-/*void func(unsigned int i, char *c)
-{
-	(void)i;
-	*c = ft_toupper(*c);
-}
+//#include <stdio.h>
 
-#include <stdio.h>
+//int main(void)
+//{
+//	t_list *list = NULL;
+//	list = ft_lstnew(ft_strdup("hi"));
+//	list->next = ft_lstnew(ft_strdup("hello"));
+//	list->next->next = ft_lstnew(ft_strdup("world"));
 
-int	main(void)
-{
-	char s[] = "hello";
-	printf("original : %s\n", s);
+//	printf("%s\n", (char*)list->content);
 
-	ft_striteri(s, func);
-	printf("after : %s\n", s);
-}*/
+//	ft_lstclear(&list, free);	
+//}

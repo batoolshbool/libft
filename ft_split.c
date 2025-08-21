@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:49:11 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/20 18:54:13 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/21 17:07:00 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static size_t	ft_count(char const *s, char c)
 	count = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
 		if (s[i])
 		{
@@ -40,7 +40,19 @@ static char	*ft_dupfunc(const char *s, size_t a, char c)
 	size_t	i;
 	size_t	start;
 
-	start = a;
+	start = a;# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    ft_lstdelone.v                                     :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/08/21 17:06:41 by bshbool           #+#    #+#              #
+#    Updated: 2025/08/21 17:06:42 by bshbool          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+
 	while (s[a] && s[a] != c)
 		a++;
 	i = a - start;
@@ -74,7 +86,7 @@ static char	**ft_fill(char const *s, char c, char **var)
 	j = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
 		if (s[i])
 		{

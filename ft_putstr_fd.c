@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bshbool <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 17:40:19 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/10 17:43:59 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/21 19:25:24 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 void	ft_putstr_fd(char *s, int fd)
 {

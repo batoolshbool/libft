@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 14:04:09 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/21 19:24:40 by bshbool          ###   ########.fr       */
+/*   Created: 2025/08/21 17:06:55 by bshbool           #+#    #+#             */
+/*   Updated: 2025/08/21 17:32:24 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	if (!lst || !del)
+		return ;
+	(*del)(lst->content);
+	free(lst);
 }
+//int main()
+//{
+//	t_list *list = NULL;
+//	list = ft_lstnew(ft_strdup("hellooo"));
+//	ft_lstdelone(list, free);
+//	list = NULL;
+//	printf("node deleted\n");
+//}
