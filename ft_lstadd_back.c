@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:27:15 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/20 17:44:14 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 12:48:59 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*meow;
+	t_list	*last;
 
 	if (!lst || !new)
 		return ;
@@ -23,10 +23,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	meow = *lst;
-	while (meow->next)
-		meow = meow->next;
-	meow->next = new;
+	last = *lst;
+	while (last->next)
+		last = last->next;
+	last->next = new;
 }
 
 /*#include <stdio.h>

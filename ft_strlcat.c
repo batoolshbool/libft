@@ -6,10 +6,11 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 17:52:34 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/21 19:25:43 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 13:08:06 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

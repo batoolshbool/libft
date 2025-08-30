@@ -6,10 +6,11 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 14:18:07 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/21 19:24:43 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 12:43:15 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

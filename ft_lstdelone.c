@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 17:06:55 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/21 17:32:24 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 12:49:21 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (!lst || !del)
 		return ;
-	(*del)(lst->content);
+	del(lst->content);
 	free(lst);
 }
 //int main()

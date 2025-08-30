@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 20:43:01 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/12 20:51:40 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 13:07:18 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
-	if (!s || !f)
-		return ;
 	i = 0;
 	while (s[i])
 	{

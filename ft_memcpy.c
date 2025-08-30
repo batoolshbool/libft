@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:00:26 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/21 19:25:09 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 12:49:58 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	s = (const char *)src;
 	d = (char *)dest;
 	i = 0;
-	while (i != n)
+	while (i < n)
 	{
 		d[i] = s[i];
 		i++;

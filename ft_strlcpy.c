@@ -6,10 +6,11 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:10:51 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/21 19:25:48 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 13:07:42 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -27,7 +28,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		}
 		dst[i] = '\0';
 	}
-	return (ft_strlen(src));
+	return (srclen);
 }
 
 /*#include <bsd/string.h>

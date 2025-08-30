@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 18:10:25 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/21 18:12:51 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 13:02:40 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,25 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	while (lst)
 	{
 		f(lst->content);
-		lst = lst->next
-		}
-		}
+		lst = lst->next;
+	}
+}
+
+// #include <stdio.h>
+//
+// static void print_content(void *content)
+// {
+// 	printf("%s\n", (char *)content);
+// }
+//
+// int main(void)
+// {
+// 	char *str1 = "10";
+// 	char *str2 = "20";
+// 	char *str3 = "30";
+// 	t_list *n = ft_lstnew((void *)str1);
+// 	n->next = ft_lstnew((void *)str2);
+// 	n->next->next = ft_lstnew((void *)str3);
+//
+// 	ft_lstiter(n, print_content);
+// }

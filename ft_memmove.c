@@ -6,10 +6,11 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:31:59 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/21 19:25:13 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 12:50:24 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -17,8 +18,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const char	*s;
 	char		*d;
 
-	if (!dest || !src)
-		return (0);
 	s = (const char *)src;
 	d = (char *)dest;
 	if (d > s)

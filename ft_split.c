@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:49:11 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/21 17:07:00 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 13:06:53 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,7 @@ static char	*ft_dupfunc(const char *s, size_t a, char c)
 	size_t	i;
 	size_t	start;
 
-	start = a;# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    ft_lstdelone.v                                     :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/21 17:06:41 by bshbool           #+#    #+#              #
-#    Updated: 2025/08/21 17:06:42 by bshbool          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-
+	start = a;
 	while (s[a] && s[a] != c)
 		a++;
 	i = a - start;
@@ -116,16 +104,17 @@ char	**ft_split(char const *s, char c)
 	ft_fill(s, c, var);
 	return (var);
 }
-//#include <stdio.h>
-//int main()
-//{
-//	char **meow = ft_split("  meow meow meow meow :3", ' ');
-//	int i = 0 ;
-//	while(meow[i])
-//	{
-//		printf("%s\n", meow[i]);
-//		free(meow[i]);
-//		i++;
-//	}
-//	free(meow);
-//}
+
+// #include <stdio.h>
+// int main()
+// {
+// 	char **meow = ft_split("  meow meow meow meow :3", ' ');
+// 	int i = 0 ;
+// 	while(meow[i])
+// 	{
+// 		printf("%s\n", meow[i]);
+// 		free(meow[i]);
+// 		i++;
+// 	}
+// 	free(meow);
+// }

@@ -6,10 +6,11 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 18:25:19 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/21 19:25:00 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 12:50:44 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -24,7 +25,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *)&str[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
 
 /*#include <stdio.h>

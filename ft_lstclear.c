@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 17:32:36 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/21 17:45:18 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 12:49:10 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*var;
 
-	if (!lst || *del)
+	if (!lst || !del)
 		return ;
 	while (*lst)
 	{

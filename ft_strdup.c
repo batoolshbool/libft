@@ -6,10 +6,11 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 16:37:53 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/21 19:25:31 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 13:07:04 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
