@@ -20,7 +20,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 /*#include <stdio.h>
-int main(void)
+int	main(void)
 {
 	t_list *n1 = ft_lstnew("Hi");
 	t_list *n2 = ft_lstnew("HELLOO");

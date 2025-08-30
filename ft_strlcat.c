@@ -34,7 +34,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 /*#include <stdio.h>
 #include <bsd/string.h>
 
-int main()
+int	main(void)
 {
     char first[] = "This is ";
     char last[] = "a potentially long string";

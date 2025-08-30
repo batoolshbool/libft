@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:49:11 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/30 13:06:53 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 16:59:08 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static char	*ft_dupfunc(const char *s, size_t a, char c)
 		a++;
 	i = a - start;
 	var = (char *)malloc((i + 1) * sizeof(char));
-	if (var == NULL)
+	if (!var)
 		return (NULL);
 	j = 0;
 	while (j < i)
@@ -60,8 +60,13 @@ static char	*ft_dupfunc(const char *s, size_t a, char c)
 static char	**ft_free(char **var, size_t j)
 {
 	while (j > 0)
-		free (var[--j]);
-	free (var);
+	{
+		free(var[j]);
+		var[j] = NULL;
+		j--;
+	}
+	free(var);
+	var = NULL;
 	return (NULL);
 }
 

@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:00:26 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/30 12:49:58 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 16:50:38 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const char	*s;
 	char		*d;
 
+	if (!dest && !src)
+		return (NULL);
 	s = (const char *)src;
 	d = (char *)dest;
 	i = 0;
@@ -32,7 +34,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 /*#include <stdio.h>
 #include <string.h>
 
-int main()
+int	main(void)
 {
     char str1[] = "";
     char str2[] = "";
@@ -47,5 +49,5 @@ int main()
     printf("str2 ft_memcpy: ");
     printf("%s\n",str2);
 
-    return 0;
+    return (0);
 }*/

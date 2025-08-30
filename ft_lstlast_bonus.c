@@ -22,7 +22,7 @@ t_list	*ft_lstlast(t_list *lst)
 }
 
 /*#include <stdio.h>
-int main(void)
+int	main(void)
 {
 	t_list *n1 = ft_lstnew("a");
 	t_list *n2 = ft_lstnew("b");

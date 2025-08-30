@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:31:59 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/30 12:50:24 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 16:52:35 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const char	*s;
 	char		*d;
 
+	if (!dest && !src)
+		return (NULL);
 	s = (const char *)src;
 	d = (char *)dest;
 	if (d > s)
@@ -42,7 +44,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 /*#include <stdio.h>
 #include <string.h>
 
-int main()
+int	main(void)
 {
     char str1[] = "HELLO!!!!!";
     char str2[] = "hihihihi";
@@ -58,5 +60,5 @@ int main()
     printf("ft_memmove: ");
     printf("%s\n",str2);
 
-    return 0;
+    return (0);
 }*/

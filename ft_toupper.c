@@ -20,7 +20,7 @@ int	ft_toupper(int ch)
 }
 
 /*#include <stdio.h>
-int main() {
+int	main(void) {
     char c;
 
     c = 'm';
@@ -31,5 +31,5 @@ int main() {
 
     c = '9';
     printf("\n%c -> %c", c, ft_toupper(c));
-    return 0;
+    return (0);
 }*/

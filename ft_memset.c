@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:05:27 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/30 14:03:52 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 16:31:28 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t			i;
-	unsigned char	*str;
+	size_t	i;
+	char	*str;
 
 	str = (char *)s;
 	i = 0;
 	while (i < n)
 	{
-		str[i] = (unsigned char)c;
+		str[i] = (char)c;
 		i++;
 	}
 	return (str);
@@ -30,7 +30,7 @@ void	*ft_memset(void *s, int c, size_t n)
 /*#include <stdio.h>
 #include <string.h>
 
-int main()
+int	main(void)
 {
     char str[50] = "hello";
     printf("\nBefore memset(): %s\n", str);
@@ -42,5 +42,5 @@ int main()
     ft_memset(str, 'A', 8*sizeof(char));
     printf("After ft_memset():  %s\n", str);
     
-    return 0;
+    return (0);
 }*/

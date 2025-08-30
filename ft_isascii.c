@@ -21,7 +21,8 @@ int	ft_isascii(int c)
 
 /*#include <stdio.h>
 #include <ctype.h>
-int main(void)
+
+int	main(void)
 {
    int ch;
  
@@ -40,5 +41,5 @@ int main(void)
       else
          printf("Cannot be represented by an ASCII character\n");
    }
-   return 0;
+   return (0);
 }*/

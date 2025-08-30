@@ -31,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 }
 
 /*#include <stdio.h>
-int main(void)
+int	main(void)
 {
 	char const *s1 = "....hello hi world....";
 	char const *s2 = ".";

@@ -26,11 +26,16 @@ int	ft_lstsize(t_list *lst)
 }
 /*
 #include <stdio.h>
-int main(void)
+
+int	main(void)
 {
-	t_list *n1 = ft_lstnew("hi");
-	t_list *n2 = ft_lstnew("hello");
-	t_list *n3 = ft_lstnew("meow");
+	t_list	*n1;
+	t_list	*n2;
+	t_list	*n3;
+
+	n1 = ft_lstnew("hi");
+	n2 = ft_lstnew("hello");
+	n3 = ft_lstnew("meow");
 	
 	if (n1 && n2 && n3)
 	{

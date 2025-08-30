@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*var;
 
@@ -36,5 +36,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 //	printf("%s\n", (char*)list->content);
 
-//	ft_lstclear(&list, free);	
+//	ft_lstclear(&list, free);
 //}

@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 14:40:18 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/30 12:48:29 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 16:44:57 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ char	*ft_itoa(int n)
 	nb = n;
 	len = ft_digit(n);
 	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
 	str[len] = '\0';
 	if (!str)
 		return (NULL);

@@ -35,7 +35,7 @@ void	ft_bzero(void *s, size_t n)
 //    printf("original: \"%s\"\n", buffer);
 
 //    bzero(buffer, 4);
-//    printf("bzero: \"%s\"\n", buffer); 
+//    printf("bzero: \"%s\"\n", buffer);
 //    ft_bzero(buffer, 4);
 //    printf("ft_bzero: \"%s\"\n", buffer);
 //}

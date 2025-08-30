@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:28:35 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/21 19:26:53 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 16:42:37 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strrchr(const char *str, int c)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == c)
+		if (str[i] == (char)c)
 			occur = (char *)&str[i];
 		i++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)&str[i]);
 	return (occur);
 }
@@ -33,7 +33,7 @@ char	*ft_strrchr(const char *str, int c)
 /*#include <stdio.h>
 #include <string.h>
 
-int main(void)
+int	main(void)
 {
         char tweet[] = "Hello, World!";
         char *m  = strrchr(tweet, 'H');

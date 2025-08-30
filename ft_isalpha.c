@@ -22,7 +22,7 @@ int	ft_isalpha(int c)
 /*#include <stdio.h>
 #include <ctype.h>
 
-int main() {
+int	main(void) {
   char c = 'A';
   if (isalpha(c)) {
     printf("%c is a letter\n", c);
@@ -34,5 +34,5 @@ int main() {
   } else {
     printf("%c is not a letter\n", c);
   }
-  return 0;
+  return (0);
 }*/
