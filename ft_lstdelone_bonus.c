@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/21 17:32:36 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/30 12:49:10 by bshbool          ###   ########.fr       */
+/*   Created: 2025/08/21 17:06:55 by bshbool           #+#    #+#             */
+/*   Updated: 2025/08/30 14:06:24 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	t_list	*var;
-
 	if (!lst || !del)
 		return ;
-	while (*lst)
-	{
-		var = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = var;
-	}
+	del(lst->content);
+	free(lst);
 }
-//#include <stdio.h>
-
-//int main(void)
+//int main()
 //{
 //	t_list *list = NULL;
-//	list = ft_lstnew(ft_strdup("hi"));
-//	list->next = ft_lstnew(ft_strdup("hello"));
-//	list->next->next = ft_lstnew(ft_strdup("world"));
-
-//	printf("%s\n", (char*)list->content);
-
-//	ft_lstclear(&list, free);	
+//	list = ft_lstnew(ft_strdup("hellooo"));
+//	ft_lstdelone(list, free);
+//	list = NULL;
+//	printf("node deleted\n");
 //}

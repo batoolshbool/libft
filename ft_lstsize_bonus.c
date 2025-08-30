@@ -1,33 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/18 13:20:28 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/18 13:42:49 by bshbool          ###   ########.fr       */
+/*   Created: 2025/08/18 16:08:06 by bshbool           #+#    #+#             */
+/*   Updated: 2025/08/30 14:04:48 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*list;
+	int	i;
 
-	list = malloc(sizeof(t_list));
-	if (!list)
-		return (NULL);
-	list->content = content;
-	list->next = NULL;
-	return (list);
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
-
-/*#include <stdio.h>
-int main (void)
+/*
+#include <stdio.h>
+int main(void)
 {
-	char *str = "Hello, World";
-	t_list *node = ft_lstnew((void *)str);
-	printf ("%s\n", (char *)node->content);	
-}*/
+	t_list *n1 = ft_lstnew("hi");
+	t_list *n2 = ft_lstnew("hello");
+	t_list *n3 = ft_lstnew("meow");
+	
+	if (n1 && n2 && n3)
+	{
+		n1->next = n2;
+		n2->next = n3;
+		n3->next = NULL;
+		
+		printf("size : %d\n", ft_lstsize(n1));
+	}
+	else
+		printf("failed\n");
+}
+		*/

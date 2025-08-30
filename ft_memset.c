@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:05:27 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/30 12:51:41 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/08/30 14:03:52 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*str;
 
 	str = (char *)s;

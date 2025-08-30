@@ -1,48 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/20 17:27:15 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/30 12:48:59 by bshbool          ###   ########.fr       */
+/*   Created: 2025/08/20 16:41:37 by bshbool           #+#    #+#             */
+/*   Updated: 2025/08/30 14:05:33 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*last;
-
-	if (!lst || !new)
-		return ;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
-	last = *lst;
-	while (last->next)
-		last = last->next;
-	last->next = new;
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
 /*#include <stdio.h>
 int main(void)
 {
-	t_list *hi = NULL;
+	t_list *n1 = ft_lstnew("a");
+	t_list *n2 = ft_lstnew("b");
+	t_list *n3 = ft_lstnew("c");
 	
-	t_list *n1 = ft_lstnew("Hi");
-	t_list *n2 = ft_lstnew("HELLOO");
+	n1->next = n2;
+	n2->next = n3;
 	
-	ft_lstadd_back(&hi, n1);
-	ft_lstadd_back(&hi, n2);
-	t_list *hello = hi;
-	while (hello)
-	{
-		printf("%s", (char*)hello->content);
-		hello = hello->next;
-	}
+	t_list *last = ft_lstlast(n1);
+	printf("%s\n", (char *)last->content);
 }*/

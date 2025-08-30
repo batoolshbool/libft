@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/18 13:45:49 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/20 14:36:45 by bshbool          ###   ########.fr       */
+/*   Created: 2025/08/30 13:10:02 by bshbool           #+#    #+#             */
+/*   Updated: 2025/08/30 14:05:23 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	t_list	*new;
+	t_list	*temp;
+
+	if (!lst || !f)
+		return (NULL);
+	new = NULL;
+	while (lst)
+	{
+		temp = ft_lstnew(f(lst->content));
+		if (!temp)
+		{
+			ft_lstclear(&new, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new, temp);
+		lst = lst->next;
+	}
+	return (new);
 }
-/*#include <stdio.h>
-int main(void)
-{
-	t_list *n1 = ft_lstnew("Hi");
-	t_list *n2 = ft_lstnew("HELLOO");
-	
-	ft_lstadd_front(&n1, n2);
-	printf("%s %s\n", (char *)n2->content, (char *)n2->next->content);
-}*/
