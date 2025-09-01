@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 17:14:50 by bshbool           #+#    #+#             */
-/*   Updated: 2025/09/01 09:53:57 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/09/01 10:03:14 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*var;
 
 	if (!nmemb || !size)
-		return (malloc(1));
+		return (malloc(0));
 	var = malloc(size * nmemb);
 	if (!var)
 		return (NULL);

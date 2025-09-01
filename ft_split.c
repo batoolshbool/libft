@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:49:11 by bshbool           #+#    #+#             */
-/*   Updated: 2025/09/01 09:58:49 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/09/01 10:15:23 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ static char	*ft_dupfunc(const char *s, size_t a, char c)
 
 static char	**ft_free(char **var, size_t j)
 {
+	if (!var)
+		return (NULL);
 	while (j > 0)
 	{
 		free(var[j]);
@@ -94,7 +96,7 @@ static char	**ft_fill(char const *s, char c, char **var)
 	var[j] = NULL;
 	return (var);
 }
-//You are trying to free a pointer that was already freed
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	count;

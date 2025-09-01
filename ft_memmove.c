@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:31:59 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/30 16:52:35 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/09/01 10:01:14 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const char	*s;
 	char		*d;
 
-	if (!dest && !src)
-		return (NULL);
 	s = (const char *)src;
 	d = (char *)dest;
 	if (d > s)
