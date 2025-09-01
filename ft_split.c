@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:49:11 by bshbool           #+#    #+#             */
-/*   Updated: 2025/09/01 10:15:23 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/09/01 10:24:40 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,14 @@ static char	**ft_free(char **var, size_t j)
 		return (NULL);
 	while (j > 0)
 	{
-		free(var[j]);
-		var[j] = NULL;
 		j--;
+		if (var[j])
+		{
+			free(var[j]);
+			var[j] = NULL;
+		}
 	}
 	free(var);
-	var = NULL;
 	return (NULL);
 }
 
@@ -108,7 +110,7 @@ char	**ft_split(char const *s, char c)
 	var = malloc((count + 1) * sizeof(char *));
 	if (!var)
 		return (NULL);
-	ft_fill(s, c, var);
+	var = ft_fill(s, c, var);
 	return (var);
 }
 
