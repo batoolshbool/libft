@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 17:14:50 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/20 18:39:16 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/09/01 09:47:38 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*var;
 
+	if (!nmemb || !size)
+		return (malloc(1))
 	var = malloc(size * nmemb);
-	if (var == NULL)
+	if (!var)
 		return (NULL);
 	ft_bzero(var, size * nmemb);
 	return (var);
 }
-
+/// If nmemb or size is 0, then calloc() returns a unique pointer value that can be successfully passed to free().
 //#include <stdio.h>
 //#include <stdlib.h>
 //int main() {
