@@ -6,7 +6,7 @@
 /*   By: bshbool <bshbool@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 18:49:11 by bshbool           #+#    #+#             */
-/*   Updated: 2025/08/30 16:59:08 by bshbool          ###   ########.fr       */
+/*   Updated: 2025/09/01 09:55:42 by bshbool          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ static char	**ft_fill(char const *s, char c, char **var)
 	var[j] = NULL;
 	return (var);
 }
-
+//You are trying to free a pointer that was already freed
 char	**ft_split(char const *s, char c)
 {
 	size_t	count;
